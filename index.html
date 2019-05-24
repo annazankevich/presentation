@@ -1,49 +1,220 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>CSS Grid Layout</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>CSS Grid Layout</h1>
+            <p>
+                <small>Created by <a href="https://github.com/annazankevich">Zankevich Anna</a></small>
+            </p>
+        </section>
 
-		<script src="js/reveal.js"></script>
+        <section>
+            <p>CSS Grid layouts are definitely one of the most exciting developments in CSS for years.</p>
+            <img data-src="grid.jpg">
+        </section>
+        <section>
+            <p> It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is
+                largely a 1-dimensional system. </p>
+            <img src="grid-vs-flexbox.jpg" height="450" width="700">
+        </section>
+        <section>
+            <h3>What about browser support?</h3>
+            <img data-src="support.png">
+        </section>
+        <section>
+            <h3>CSS Terminology</h3>
+            <ul>
+                <li>Grid container</li>
+                <li>Grid item</li>
+                <li>Grid line</li>
+                <li>Grid cell</li>
+                <li>Grid track</li>
+                <li>Grid area</li>
+                <li>Grid gap</li>
+            </ul>
+        </section>
+        <section>
+            <section data-markdown>
+                <script type="text/template">
+                    ## Grid container
+                    ```
+                    <div class="grid-container">
+                        <div class="grid-item">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                        <div class="grid-item">4</div>
+                        <div class="grid-item">5</div>
+                        <div class="grid-item">6</div>
+                    </div>
+                    ```
+                </script>
+            </section>
+        </section>
+        <section>
+            <h3>Grid Lines</h3>
+            <p>The lines between columns are called column lines.The lines between rows are called row lines.</p>
+            <img src="gridline.png">
+        </section>
+        <section>
+            <h3>Grid Cell</h3>
+            <p>A grid cell is the smallest unit on a grid. Conceptually it is like a table cell.</p>
+            <img src="gridcell.png">
+        </section>
+        <section>
+            <h3>Grid Area</h3>
+            <p>The total space surrounded by four grid lines. A grid area may be comprised of any number of grid cells.
+                Here's the grid area between row grid lines 1 and 3, and column grid lines 1 and 3.</p>
+            <img src="gridarea.png">
+        </section>
+        <section>
+            <h3>Grid Track</h3>
+            <p>The space between two adjacent grid lines. You can think of them like the columns or rows of the grid.
+                Here's the grid track between the second and third row grid lines.</p>
+            <img src="grid-track.png">
+        </section>
+        <section>
+            <h3>Grid Gaps</h3>
+            <p>The spaces between each column/row are called gaps.</p>
+            <img src="gridGaps.png">
+        </section>
+        <section>
+            <section data-markdown>
+                <script type="text/template">
+                    ## Display Property
+                    Create a grid container
+                    ```
+                    .container {
+                    display: grid;
+                    }
+                    ```
+                    or
+                    ```
+                    .grid-container {
+                    display: inline-grid;
+                    }
+                    ```
+                </script>
+            </section>
+        </section>
+        <section>
+            <section data-markdown>
+                <script type="text/template">
+                    ## Grid Properties
+                    grid-template-columns
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+                    grid-template-rows
+                    ```
+                    .container {
+                    grid-template-columns: 3fr 2fr 1ft;
+                    grid-template-rows: 25% 100px auto;
+                    }
+                    ```
+                </script>
+            </section>
+        </section>
+        <section>
+            <h3>FR</h3>
+            <p>The space between two adjacent grid lines. You can think of them like the columns or rows of the grid.
+                Here's the grid track between the second and third row grid lines.</p>
+        </section>
+        <section>
+            <h3>Grid Template Area</h3>
+            <p>Applied to grid container. Uses a text-based grid map to apply grid area names to individual cells.</p>
+            <img src="gridTemplateArea.png">
+        </section>
+
+        <section>
+            <section data-markdown>
+                <script type="text/template">
+                    ## Grid Template Area
+                    ```
+                    container {
+                    grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+                    grid-template-columns: auto 50px auto;
+                    grid-template-areas:
+                    "header header header"
+                    "footer footer footer";
+                    }
+                    ```
+                </script>
+            </section>
+        </section>
+        <section>
+            <h3>grid-area-name:  [area-name]</h3>
+            <p> ______ </p>
+            <p>Specifies what grid area the element is placed within</p>
+        </section>
+        <section>
+            <section data-markdown>
+                <script type="text/template">
+                    ## grid-area-name
+                    ```
+                    .container {
+                    display: grid;
+                    grid-template-columns: 50px 50px 50px ;
+                    grid-template-rows: auto;
+                    grid-template-areas:
+                    "header header header "
+                    "main main"
+                    "footer footer footer ";
+                    }
+                    .item-a {
+                    grid-area: header;
+                    }
+                    .item-b {
+                    grid-area: main;
+                    }
+                    .item-d {
+                    grid-area: footer;
+                    }
+                    ```
+                </script>
+            </section>
+        </section>
+        <section>
+            <h3>Thank you for your attention!</h3>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {src: 'plugin/highlight/highlight.js', async: true}
+        ]
+    });
+</script>
+</body>
 </html>
