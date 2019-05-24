@@ -138,12 +138,13 @@
         </section>
         <section>
             <h3>FR</h3>
-            <p>The space between two adjacent grid lines. You can think of them like the columns or rows of the grid.
-                Here's the grid track between the second and third row grid lines.</p>
+            <p>Fr is a fractional unit and 1fr is for 1 part of the available space.</p>
         </section>
         <section>
             <h3>Grid Template Area</h3>
-            <p>Applied to grid container. Uses a text-based grid map to apply grid area names to individual cells.</p>
+            <p>The grid-template-areas property specifies areas within the grid layout.
+                You can name grid items by using the grid-area property, and then reference to the name in the
+                grid-template-areas property.</p>
             <img src="gridTemplateArea.png">
         </section>
 
@@ -156,7 +157,8 @@
                     grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
                     grid-template-columns: auto 50px auto;
                     grid-template-areas:
-                    "header header header"
+                    "header header main"
+                    "header header main"
                     "footer footer footer";
                     }
                     ```
@@ -164,7 +166,7 @@
             </section>
         </section>
         <section>
-            <h3>grid-area-name:  [area-name]</h3>
+            <h3>grid-area-name: [area-name]</h3>
             <p> ______ </p>
             <p>Specifies what grid area the element is placed within</p>
         </section>
