@@ -34,24 +34,29 @@ The total space surrounded by four grid lines. A grid area may be comprised of a
 Grid Track
 The space between two adjacent grid lines. You can think of them like the columns or rows of the grid. Here's the grid track between the second and third row grid lines.
 #### Slide 10
-The gap CSS property sets the gaps (gutters) between rows and columns. 
+The gap CSS property sets the gaps (gutters) between rows and columns.
 #### Slide 11
+When should we use grid
+Choose grid layout for larger scale layouts which aren’t linear in their design, but for small-scale
+layouts use flexbox. If you only need to define a layout as a row or a column, then you probably need flexbox. If you
+ want to define a grid and fit content into it in two dimensions — you need the grid.
+#### Slide 12
 Display Property
  Create a grid container
  Step 1 Define a grid
  Step 2 To find on an element where you want to a grid to appear number
  Step 3 Place items within the grid
-####  Slide 12
+####  Slide 13
  For create Grid Container we declare display grid or grid-inline
  Now we have a grid-contaner.
  Then we decide how many rows and colums we want. We are using grid-template-columns and grid-template-rows.
-#### Slide  13
+#### Slide  14
 Fraction
 Fr is a fractional unit and 1fr is for 1 part of the available space.
-#### Slide  14
+#### Slide  15
 The grid-template-areas property specifies areas within the grid layout.
 You can name grid items by using the grid-area property, and then reference to the name in the
 grid-template-areas property
-#### Slide  15
+#### Slide  16
 Then you use property on individual child items and you declare the name of the area you want the element to appear
 And this is allowed us to do great responsive web desigh. And you responsive code and media queries become very simple. Anyone who read this code understand all. And everything just work.
